@@ -8,7 +8,14 @@
     padding-left: 15px;
     padding-right: 15px;
 }
-
+/*Override the default bootstrap Nar by Pham Quang Long*/
+.navbar-inverse {
+    background-color: #006400;
+    border-color: #556B2F;
+}
+.navbar-inverse .navbar-brand {
+    color: #9370DB;
+}
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -22,3 +29,79 @@ select,
 textarea {
     max-width: 280px;
 }
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Override the default bootstrap Nar by Pham Quang Long*/
+
+.navbar-inverse {
+    background-color: #006400;
+    border-color: #556B2F;
+}
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: white;
+    }
+
+    .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav {
+        color: #9370db;
+    }
+
+/*Course layout*/
+.course {
+    list-style: none;
+}
+
+    .course > li {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+        .course > li > .date {
+            text-align: center;
+            background-color: #d41d50;
+            color: white;
+            width: 60px;
+            border-radius: 8px;
+        }
+
+        .course > li > .details {
+            position: absolute;
+            top: 0px;
+            left: 70px;
+            display: grid;
+        }
+
+
+        /* action */
+        .course > li .action {
+            display: none;
+            left: 70px;
+            position: absolute;
+        }
+
+        .course > li:hover .action {
+            display: block;
+        }
