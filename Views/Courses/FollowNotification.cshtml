@@ -1,0 +1,18 @@
+﻿@model PhamQuangLong_1911067466_LAB456.ViewModels.FollowNotificationViewModel
+@{
+    ViewBag.Title = "Notification Page";
+}
+
+<div class="row">
+    <ul class="course">
+        @foreach (var follow in Model.Notifications)
+        {
+            <li>
+                <span class="lecturer">
+                    @follow.Logger
+                    <br />
+                </span>
+            </li>
+        }
+    </ul>
+</div>
