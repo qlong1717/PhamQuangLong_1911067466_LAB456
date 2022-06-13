@@ -21,11 +21,22 @@ namespace PhamQuangLong_1911067466_LAB456.Controllers
 
         public ActionResult Index()
         {
+            var userId = User.Identity.GetUserId();
             var upcommingCourses = _dbContext.Courses.Include(c => c.Lecturer)
                                                      .Include(c => c.Category)
                                                      .Where(c => c.DateTime > DateTime.Now);
-            return View(upcommingCourses);
+            
+            var viewModel = new CoursesViewModel
+            {
+                UpcommingCourses = upcommingCourses,
+                ShowAction = User.Identity.IsAuthenticated,
+                Followings = _dbContext.Followings.Where(f => userId != null && f.FolloweeId == userId).ToList(),
+                Attendances = _dbContext.Attendances.Include(a => a.Course).ToList()
+
+            };
+            return View(viewModel);
         }
+
 
         public ActionResult About()
         {

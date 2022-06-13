@@ -1,7 +1,10 @@
 ﻿@model PhamQuangLong_1911067466_LAB456.ViewModels.CoursesViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<h2>Attending</h2>
 <div class="row">
     <ul class="course">
         @foreach (var course in Model.UpcommingCourses)
@@ -63,3 +66,4 @@
         });
     </script>
 }
+
